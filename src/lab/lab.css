@@ -1,0 +1,138 @@
+.lab {
+  scroll-margin-top: 24px;
+}
+.lab-view,
+.lab-grid button {
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.lab-view {
+  position: relative;
+  aspect-ratio: 1.92;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.lab canvas {
+  display: block;
+}
+:root[data-theme="light"] .lab canvas {
+  filter: invert(1);
+}
+.lab-stage {
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  cursor: crosshair;
+}
+.lab-stage:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+.lab-play {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+  background: var(--chip);
+  border: 0;
+  border-radius: 18px;
+  font: inherit;
+  font-size: 13px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.lab-play span {
+  width: 12px;
+  text-align: center;
+}
+.lab-details {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 0 22px;
+}
+.lab h3 {
+  font-weight: 500;
+  margin: 0 0 4px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+.lab-details p,
+.lab-details a {
+  color: var(--muted);
+  font-size: 14px;
+}
+.lab-details a {
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.lab-details a:hover {
+  color: var(--ink);
+}
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+.lab-grid button {
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+  padding: 0 0 8px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.lab-grid button:hover {
+  background: var(--chip);
+  color: var(--ink);
+}
+.lab-grid button[aria-pressed="true"] {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--chip);
+}
+.lab-thumb {
+  width: 100%;
+  aspect-ratio: 2.1;
+}
+.lab-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+@media (max-width: 560px) {
+  .lab-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .lab-grid button {
+    font-size: 12px;
+    padding-bottom: 7px;
+  }
+  .lab-thumb {
+    aspect-ratio: 1.55;
+  }
+  .lab-view {
+    aspect-ratio: 1.35;
+  }
+  .lab-details {
+    margin-block: 14px 18px;
+  }
+}
+@media (max-width: 370px) {
+  .lab-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  header nav {
+    gap: 9px;
+  }
+}

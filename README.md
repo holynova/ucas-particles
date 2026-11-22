@@ -1,0 +1,69 @@
+# Ucas Studio 粒子动效复刻
+
+[English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [在线演示](https://ucas-particles.xiaosang.cc/)
+
+五组原站动效复刻与十个可独立操作的粒子实验。在线版发布地址待验证。
+
+![粒子实验室真实截图](assets/screenshot.png)
+
+用浏览器打开根目录的 `index.html` 即可体验。字体、头像、项目图、世界地图和渲染代码都已嵌入同一个文件。默认使用参考录像里的深色主题，右上角可切换明暗。作品链接指向工作室原站。
+
+## 交互
+
+- 刷新页面可重播粒子百分比加载动画。
+- 首页中央的点阵依次聚成网页、手机、数据面板、品牌规范和 Ucas 字标。横向移动指针可以观察视差，快速划过会带动一片粒子。
+- 向下滚动，四张作品卡依次从客户标志聚成彩色封面。悬停可切回粒子标志，移开还原照片。
+- 在 Team 区域扫过两位创始人的脸，可以观察局部散开和回弹。页尾世界地图用粒子弧线连接安卡拉和纽约。
+
+## 粒子实验室
+
+从顶部导航的 **Particle Lab** 进入。页面保留 Ucas Studio 的五组动效，地图下方新增十个独立场景。每张缩略图都能切换主画布；画布右下角可以暂停播放。键盘用户可聚焦画布，用方向键移动指针，用空格或回车点按。
+
+| 场景 | 本地体验 | 参考案例 |
+|---|---|---|
+| 点阵波浪 | 横移改变双向波面的观察角度 | [Three.js · Points Waves](https://threejs.org/examples/webgl_points_waves.html) |
+| 旋臂星系 | 滑动倾转四臂星盘 | [Three.js · Galaxy](https://threejs.org/examples/webgpu_tsl_galaxy.html) |
+| 振动沙纹 | 点按在四组克拉德尼节线之间切换 | [CymaVis · Chladni Plate](https://cymavis.com/chladni) |
+| 避让鸟群 | 指针驱散鸟群，移开后重新结队 | [p5.js · Flocking](https://p5js.org/examples/Classes-And-Objects-Flocking/) |
+| 混沌蝶翼 | 旋转、观察洛伦兹系统的三维轨迹 | [The Coding Train · Lorenz Attractor](https://thecodingtrain.com/challenges/12-lorenz-attractor) |
+| 噪声流场 | 扰动局部流向 | [The Coding Train · Perlin Noise Flow Field](https://thecodingtrain.com/challenges/24-perlin-noise-flow-field) |
+| 连线星图 | 指针成为临时节点，连接邻近星点 | [Vincent Garreau · particles.js](https://vincentgarreau.com/particles.js/) |
+| 雨滴碰撞 | 移动横板接住雨滴 | [Three.js · Compute Particles Rain](https://threejs.org/examples/webgpu_compute_particles_rain.html) |
+| 粒子烟花 | 点按指定位置触发爆裂 | [The Coding Train · Fireworks](https://thecodingtrain.com/challenges/27-fireworks) |
+| 叶序螺旋 | 横向移动，在黄金角附近调整种子排列 | [The Coding Train · Phyllotaxis](https://thecodingtrain.com/challenges/30-phyllotaxis) |
+
+十个新增场景借鉴上表案例的运动方式，统一用单色粒子和 Canvas 2D 在本地绘制。`src/lab/scenes.js` 包含每个场景的绘制、交互参数和出处。缩略图静态绘制，主画布离开视口时暂停更新。
+
+## 修改与构建
+
+`src/main.jsx` 负责页面、素材和动效参数。五个独立渲染组件位于 `src/effects/`。
+
+| 文件 | 控制的内容 |
+|---|---|
+| PageLoader.js | 百分比字形与向页面内容飞散的开场 |
+| IdeaToProduct.js | 五组形状、过渡时间、主视觉粒子的运动 |
+| ParticleImage.js | 彩色图像与客户标志的双向变形 |
+| TeamPortrait.js | 面部采样、半色调密度、视差与指针扰动 |
+| ContactMap.js | 世界地图、城市节点与航线 |
+
+在此目录执行以下命令，重新生成根目录的 `index.html`。
+
+```sh
+npm ci
+npm run build
+```
+
+## 来源
+
+参考为[小红书演示录像](https://xhslink.cn/o/5MoC3vhiXj9)和 [Ucas Studio 官网](https://www.ucas.studio/)。五个动效组件改编自原站公开交付到浏览器的同名组件。保留了原站粒子着色器、形状与时序，移除了 Framer 编辑器依赖，并将素材读取改成本地打包。版式和组件挂载在本项目中重新实现。
+
+品牌标志、项目图、创始人头像和字体取自 Ucas Studio 官网。地理数据使用 world-atlas 2.0.2 的 Natural Earth 110m 陆地轮廓。主视觉、作品卡和头像使用 Three.js r160 与 WebGL。加载动画与地图使用 Canvas 2D。
+
+
+## 在线发布
+
+Cloudflare Pages 连接 GitHub 的 `main` 分支，运行 `npm run build` 并发布 `dist/`。修改代码后推送到 `main` 即触发发布。生产页面包含 Umami 访问统计，根目录的离线 HTML 可独立运行。
+
+扫码打开在线版。
+
+<img src="assets/qr.png" width="132" alt="在线演示二维码">
