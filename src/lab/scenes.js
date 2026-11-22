@@ -1,3 +1,6 @@
+import { mechanics } from "./mechanics.js";
+import { forms } from "./forms.js";
+
 // Coordinates are centered on the canvas. One unit is half its shorter side.
 const TAU = Math.PI * 2;
 const { sin, cos, sqrt, abs, exp, floor, hypot } = Math;
@@ -457,7 +460,7 @@ function phyllotaxis({ dot, time, pointer }) {
   }
 }
 
-export const studies = [
+const classics = [
   {
     name: "点阵波浪",
     hint: "左右移动，沿着波面改变视角。",
@@ -529,3 +532,10 @@ export const studies = [
     create: () => phyllotaxis,
   },
 ];
+
+export const groups = [
+  { name: "经典实验", studies: classics },
+  { name: "力与运动", studies: mechanics },
+  { name: "形态与生长", studies: forms },
+];
+export const studies = groups.flatMap((group) => group.studies);

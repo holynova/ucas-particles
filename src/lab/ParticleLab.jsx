@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { studies } from "./scenes.js";
+import { groups, studies } from "./scenes.js";
 import { makeStudy } from "./renderer.js";
 import "./lab.css";
 
@@ -155,6 +155,7 @@ export default function ParticleLab() {
     return () => observer.disconnect();
   }, []);
   const study = studies[index];
+  const group = groups.find((group) => group.studies.includes(study));
   return (
     <section
       ref={section}
@@ -192,18 +193,35 @@ export default function ParticleLab() {
       <span id="lab-keyboard" className="lab-sr">
         聚焦画面后，用方向键移动，空格或回车点按。
       </span>
-      <div className="lab-grid" role="group" aria-label="选择粒子效果">
-        {studies.map((item, i) => (
+      <div className="lab-groups" role="group" aria-label="选择实验分组">
+        {groups.map((item) => (
           <button
             key={item.name}
             type="button"
-            aria-pressed={i === index}
-            onClick={() => setIndex(i)}
+            aria-pressed={item === group}
+            onClick={() => {
+              if (item !== group) setIndex(studies.indexOf(item.studies[0]));
+            }}
           >
-            {near && <Preview study={item} index={i} />}
-            <span>{item.name}</span>
+            {item.name}
           </button>
         ))}
+      </div>
+      <div className="lab-grid" role="group" aria-label="选择粒子效果">
+        {group.studies.map((item) => {
+          const i = studies.indexOf(item);
+          return (
+            <button
+              key={item.name}
+              type="button"
+              aria-pressed={i === index}
+              onClick={() => setIndex(i)}
+            >
+              {near && <Preview study={item} index={i} />}
+              <span>{item.name}</span>
+            </button>
+          );
+        })}
       </div>
     </section>
   );

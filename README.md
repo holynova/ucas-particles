@@ -2,7 +2,7 @@
 
 [English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [在线演示](https://ucas-particles.xiaosang.cc/)
 
-五组原站动效复刻与十个可独立操作的粒子实验。在线版发布地址待验证。
+五组原站动效复刻与三十个可独立操作的粒子实验。在线版发布地址待验证。
 
 ![粒子实验室真实截图](assets/screenshot.png)
 
@@ -17,7 +17,7 @@
 
 ## 粒子实验室
 
-从顶部导航的 **Particle Lab** 进入。页面保留 Ucas Studio 的五组动效，地图下方新增十个独立场景。每张缩略图都能切换主画布；画布右下角可以暂停播放。键盘用户可聚焦画布，用方向键移动指针，用空格或回车点按。
+从顶部导航的 **Particle Lab** 进入。页面保留 Ucas Studio 的五组动效，地图下方分为三组，每组十个独立场景。每张缩略图都能切换主画布；画布右下角可以暂停播放。键盘用户可聚焦画布，用方向键移动指针，用空格或回车点按。
 
 | 场景 | 本地体验 | 参考案例 |
 |---|---|---|
@@ -32,7 +32,13 @@
 | 粒子烟花 | 点按指定位置触发爆裂 | [The Coding Train · Fireworks](https://thecodingtrain.com/challenges/27-fireworks) |
 | 叶序螺旋 | 横向移动，在黄金角附近调整种子排列 | [The Coding Train · Phyllotaxis](https://thecodingtrain.com/challenges/30-phyllotaxis) |
 
-十个新增场景借鉴上表案例的运动方式，统一用单色粒子和 Canvas 2D 在本地绘制。`src/lab/scenes.js` 包含每个场景的绘制、交互参数和出处。缩略图静态绘制，主画布离开视口时暂停更新。
+上表为「经典实验」。
+
+**力与运动**包括弹性织网、翻转沙漏、混沌双摆、磁极引线、双源干涉、摆阵行波、活塞气室、双星绕行、点阵拨弦与绕流尾迹。
+
+**形态与生长**包括环面纽结、极坐标花冠、六棱冰晶、希尔伯特曲线、分形潜航、反应斑图、风中枝序、软体融球、齿轮画盘与生命棋盘。
+
+三组场景统一用单色粒子和 Canvas 2D 在本地绘制。场景、交互参数与出处位于 `src/lab/scenes.js`、`src/lab/mechanics.js` 和 `src/lab/forms.js`。缩略图静态绘制，主画布离开视口时暂停更新。
 
 ## 修改与构建
 
