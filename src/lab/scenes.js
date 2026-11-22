@@ -1,5 +1,7 @@
 import { mechanics } from "./mechanics.js";
 import { forms } from "./forms.js";
+import { optics } from "./optics.js";
+import { paths } from "./paths.js";
 
 // Coordinates are centered on the canvas. One unit is half its shorter side.
 const TAU = Math.PI * 2;
@@ -537,5 +539,7 @@ export const groups = [
   { name: "经典实验", studies: classics },
   { name: "力与运动", studies: mechanics },
   { name: "形态与生长", studies: forms },
+  { name: "光与波", studies: optics },
+  { name: "群体与路径", studies: paths },
 ];
 export const studies = groups.flatMap((group) => group.studies);

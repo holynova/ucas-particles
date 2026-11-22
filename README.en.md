@@ -1,8 +1,8 @@
 # Ucas Studio Particle Study
 
-[简体中文](README.md) · [GitHub repository](https://github.com/holynova/ucas-particles) · [Live demo](https://ucas-particles.xiaosang.cc/)
+[简体中文](README.md) · [GitHub repository](https://github.com/holynova/ucas-particles) · [Custom domain (pending verification)](https://ucas-particles.xiaosang.cc/)
 
-An independent motion study of the Ucas Studio homepage, followed by thirty interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. The production URL is pending verification.
+An independent motion study of the Ucas Studio homepage, followed by fifty interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. [Open the Particle Lab on Cloudflare Pages](https://ucas-particles.pages.dev/#particle-lab).
 
 ![Screenshot of the interactive Particle Lab](assets/screenshot.png)
 
@@ -14,7 +14,7 @@ The five effects adapt the components delivered by Ucas Studio’s website. Stud
 
 ## Particle Lab
 
-Choose from three groups of ten. The original gallery covers waves, a spiral galaxy, Chladni sand patterns, flocking, a Lorenz attractor, a noise flow field, linked stars, rain collisions, fireworks or phyllotaxis. Mechanics adds an elastic net, hourglass, double pendulum, magnetic field, wave interference, pendulum waves, piston gas, binary stars, plucked strings and a cylinder wake. Forms and Growth includes a torus knot, polar flower, ice crystal, Hilbert curve, Mandelbrot set, reaction–diffusion, branching tree, metaballs, spirograph and Game of Life. Each experiment includes its source link and interaction hint. Focus the canvas and use the arrow keys to move the pointer, then press Space or Enter to tap. Animation pauses offscreen.
+Choose from five groups of ten. The original gallery covers waves, a spiral galaxy, Chladni sand patterns, flocking, a Lorenz attractor, a noise flow field, linked stars, rain collisions, fireworks or phyllotaxis. Mechanics adds an elastic net, hourglass, double pendulum, magnetic field, wave interference, pendulum waves, piston gas, binary stars, plucked strings and a cylinder wake. Forms and Growth includes a torus knot, polar flower, ice crystal, Hilbert curve, Mandelbrot set, reaction–diffusion, branching tree, metaballs, spirograph and Game of Life. Light and Waves explores focusing, refraction, Doppler wavefronts, moiré, Fourier synthesis, kaleidoscopes, single-slit diffraction, eclipses, Lissajous curves and caustics. Groups and Paths adds a maze, Langton’s ant, Voronoi cells, a Galton board, cyclic pursuit, contour lines, odd-even sorting, knight paths, branching lightning and circle packing. Each experiment includes its source link and interaction hint. Focus the canvas and use the arrow keys to move the pointer, then press Space or Enter to tap. Animation pauses offscreen.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ npm ci
 npm run build
 ```
 
-The layout and component settings live in `src/main.jsx`. The five original-site studies are in `src/effects/`. The gallery and reference links live in `src/lab/scenes.js`, `src/lab/mechanics.js` and `src/lab/forms.js`.
+The layout and component settings live in `src/main.jsx`. The five original-site studies are in `src/effects/`. The gallery and reference links live in `src/lab/scenes.js`, `src/lab/mechanics.js`, `src/lab/forms.js`, `src/lab/optics.js` and `src/lab/paths.js`.
 
 ## Publish
 

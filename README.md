@@ -1,8 +1,8 @@
 # Ucas Studio 粒子动效复刻
 
-[English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [在线演示](https://ucas-particles.xiaosang.cc/)
+[English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [自定义域名（待验证）](https://ucas-particles.xiaosang.cc/)
 
-五组原站动效复刻与三十个可独立操作的粒子实验。在线版发布地址待验证。
+五组原站动效复刻与五十个可独立操作的粒子实验。[在 Cloudflare Pages 打开粒子实验室](https://ucas-particles.pages.dev/#particle-lab)。
 
 ![粒子实验室真实截图](assets/screenshot.png)
 
@@ -17,7 +17,7 @@
 
 ## 粒子实验室
 
-从顶部导航的 **Particle Lab** 进入。页面保留 Ucas Studio 的五组动效，地图下方分为三组，每组十个独立场景。每张缩略图都能切换主画布；画布右下角可以暂停播放。键盘用户可聚焦画布，用方向键移动指针，用空格或回车点按。
+从顶部导航的 **Particle Lab** 进入。页面保留 Ucas Studio 的五组动效，地图下方分为五组，每组十个独立场景。每张缩略图都能切换主画布；画布右下角可以暂停播放。键盘用户可聚焦画布，用方向键移动指针，用空格或回车点按。
 
 | 场景 | 本地体验 | 参考案例 |
 |---|---|---|
@@ -38,7 +38,11 @@
 
 **形态与生长**包括环面纽结、极坐标花冠、六棱冰晶、希尔伯特曲线、分形潜航、反应斑图、风中枝序、软体融球、齿轮画盘与生命棋盘。
 
-三组场景统一用单色粒子和 Canvas 2D 在本地绘制。场景、交互参数与出处位于 `src/lab/scenes.js`、`src/lab/mechanics.js` 和 `src/lab/forms.js`。缩略图静态绘制，主画布离开视口时暂停更新。
+**光与波**包括透镜聚焦、水面折光、多普勒波列、莫尔叠网、谐波合成、镜筒万花、单缝衍射、日冕掩星、余辉示波与圆镜焦散。
+
+**群体与路径**包括迷宫寻径、翻格蚂蚁、邻域分疆、高尔顿钉板、多点追逐、等高线岛、奇偶编织、骑士足迹、分叉闪电与圆隙填充。
+
+五组场景统一用单色粒子和 Canvas 2D 在本地绘制。场景、交互参数与出处位于 `src/lab/scenes.js`、`src/lab/mechanics.js`、`src/lab/forms.js`、`src/lab/optics.js` 和 `src/lab/paths.js`。缩略图静态绘制，主画布离开视口时暂停更新。
 
 ## 修改与构建
 
