@@ -1,8 +1,8 @@
 # Ucas Studio 粒子动效复刻
 
-[English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [自定义域名（待验证）](https://ucas-particles.xiaosang.cc/)
+[English](README.en.md) · [GitHub 仓库](https://github.com/holynova/ucas-particles) · [在线演示](https://ucas-particles.xiaosang.cc/)
 
-五组原站动效复刻与一百个可独立操作的粒子实验。[在 Cloudflare Pages 打开粒子实验室](https://ucas-particles.pages.dev/#particle-lab)。
+五组原站动效复刻与一百个可独立操作的粒子实验。[直接进入粒子实验室](https://ucas-particles.xiaosang.cc/#particle-lab)。
 
 ![粒子实验室真实截图](assets/screenshot.png)
 

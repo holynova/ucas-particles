@@ -1,8 +1,8 @@
 # Ucas Studio Particle Study
 
-[简体中文](README.md) · [GitHub repository](https://github.com/holynova/ucas-particles) · [Custom domain (pending verification)](https://ucas-particles.xiaosang.cc/)
+[简体中文](README.md) · [GitHub repository](https://github.com/holynova/ucas-particles) · [Live demo](https://ucas-particles.xiaosang.cc/)
 
-An independent motion study of the Ucas Studio homepage, followed by one hundred interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. [Open the Particle Lab on Cloudflare Pages](https://ucas-particles.pages.dev/#particle-lab).
+An independent motion study of the Ucas Studio homepage, followed by one hundred interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. [Open the Particle Lab](https://ucas-particles.xiaosang.cc/#particle-lab).
 
 ![Screenshot of the interactive Particle Lab](assets/screenshot.png)
 
