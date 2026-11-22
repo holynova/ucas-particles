@@ -155,6 +155,7 @@ export default function ParticleLab() {
     return () => observer.disconnect();
   }, []);
   const study = studies[index];
+  const linkLabel = study.linkLabel ?? "参考案例";
   const group = groups.find((group) => group.studies.includes(study));
   return (
     <section
@@ -185,9 +186,9 @@ export default function ParticleLab() {
           href={study.url}
           target="_blank"
           rel="noreferrer"
-          aria-label={`参考案例：${study.source}`}
+          aria-label={`${linkLabel}：${study.source}`}
         >
-          参考案例
+          {linkLabel}
         </a>
       </div>
       <span id="lab-keyboard" className="lab-sr">

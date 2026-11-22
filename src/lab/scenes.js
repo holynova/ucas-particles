@@ -3,6 +3,12 @@ import { forms } from "./forms.js";
 import { optics } from "./optics.js";
 import { paths } from "./paths.js";
 
+import { astronomy } from "./astronomy.js";
+import { landscape } from "./landscape.js";
+import { textiles } from "./textiles.js";
+import { dimensions } from "./dimensions.js";
+import { machines } from "./machines.js";
+
 // Coordinates are centered on the canvas. One unit is half its shorter side.
 const TAU = Math.PI * 2;
 const { sin, cos, sqrt, abs, exp, floor, hypot } = Math;
@@ -535,11 +541,32 @@ const classics = [
   },
 ];
 
+function originalGroup(name, file, entries) {
+  return {
+    name,
+    studies: entries.map(([title, hint, create, reference]) => ({
+      name: title,
+      hint,
+      create,
+      url:
+        reference ||
+        `https://github.com/holynova/ucas-particles/blob/main/src/lab/${file}.js`,
+      source: reference ? title : name,
+      linkLabel: reference ? "背景资料" : "本组源码",
+    })),
+  };
+}
+
 export const groups = [
   { name: "经典实验", studies: classics },
   { name: "力与运动", studies: mechanics },
   { name: "形态与生长", studies: forms },
   { name: "光与波", studies: optics },
   { name: "群体与路径", studies: paths },
+  originalGroup("天文巡游", "astronomy", astronomy),
+  originalGroup("天气与地貌", "landscape", landscape),
+  originalGroup("纸艺与编织", "textiles", textiles),
+  originalGroup("几何与维度", "dimensions", dimensions),
+  originalGroup("节奏机械", "machines", machines),
 ];
 export const studies = groups.flatMap((group) => group.studies);

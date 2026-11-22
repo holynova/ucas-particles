@@ -2,7 +2,7 @@
 
 [简体中文](README.md) · [GitHub repository](https://github.com/holynova/ucas-particles) · [Custom domain (pending verification)](https://ucas-particles.xiaosang.cc/)
 
-An independent motion study of the Ucas Studio homepage, followed by fifty interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. [Open the Particle Lab on Cloudflare Pages](https://ucas-particles.pages.dev/#particle-lab).
+An independent motion study of the Ucas Studio homepage, followed by one hundred interactive experiments. Sweep across a founder’s face to scatter the points or open **Particle Lab** to try a different particle system. [Open the Particle Lab on Cloudflare Pages](https://ucas-particles.pages.dev/#particle-lab).
 
 ![Screenshot of the interactive Particle Lab](assets/screenshot.png)
 
@@ -14,7 +14,7 @@ The five effects adapt the components delivered by Ucas Studio’s website. Stud
 
 ## Particle Lab
 
-Choose from five groups of ten. The original gallery covers waves, a spiral galaxy, Chladni sand patterns, flocking, a Lorenz attractor, a noise flow field, linked stars, rain collisions, fireworks or phyllotaxis. Mechanics adds an elastic net, hourglass, double pendulum, magnetic field, wave interference, pendulum waves, piston gas, binary stars, plucked strings and a cylinder wake. Forms and Growth includes a torus knot, polar flower, ice crystal, Hilbert curve, Mandelbrot set, reaction–diffusion, branching tree, metaballs, spirograph and Game of Life. Light and Waves explores focusing, refraction, Doppler wavefronts, moiré, Fourier synthesis, kaleidoscopes, single-slit diffraction, eclipses, Lissajous curves and caustics. Groups and Paths adds a maze, Langton’s ant, Voronoi cells, a Galton board, cyclic pursuit, contour lines, odd-even sorting, knight paths, branching lightning and circle packing. Each experiment includes its source link and interaction hint. Focus the canvas and use the arrow keys to move the pointer, then press Space or Enter to tap. Animation pauses offscreen.
+Choose from ten groups of ten. The original gallery covers waves, a spiral galaxy, Chladni sand patterns, flocking, a Lorenz attractor, a noise flow field, linked stars, rain collisions, fireworks or phyllotaxis. Mechanics adds an elastic net, hourglass, double pendulum, magnetic field, wave interference, pendulum waves, piston gas, binary stars, plucked strings and a cylinder wake. Forms and Growth includes a torus knot, polar flower, ice crystal, Hilbert curve, Mandelbrot set, reaction–diffusion, branching tree, metaballs, spirograph and Game of Life. Light and Waves explores focusing, refraction, Doppler wavefronts, moiré, Fourier synthesis, kaleidoscopes, single-slit diffraction, eclipses, Lissajous curves and caustics. Groups and Paths adds a maze, Langton’s ant, Voronoi cells, a Galton board, cyclic pursuit, contour lines, odd-even sorting, knight paths, branching lightning and circle packing. Five more groups explore astronomy, weather and landforms, paper and textiles, geometry and dimensions, and rhythmic machines. Try measuring a planetary transit, dropping scree, closing a zipper, slicing a cube or toggling a visual step sequencer. Each experiment includes an interaction hint and a link to a reference or implementation. Focus the canvas and use the arrow keys to move the pointer, then press Space or Enter to tap. Animation pauses offscreen.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ npm ci
 npm run build
 ```
 
-The layout and component settings live in `src/main.jsx`. The five original-site studies are in `src/effects/`. The gallery and reference links live in `src/lab/scenes.js`, `src/lab/mechanics.js`, `src/lab/forms.js`, `src/lab/optics.js` and `src/lab/paths.js`.
+The layout and component settings live in `src/main.jsx`. The five original-site studies are in `src/effects/`. The [scene catalog](src/lab/scenes.js) links the implementations for all ten groups.
 
 ## Publish
 

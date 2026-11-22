@@ -138,9 +138,9 @@
 }
 
 .lab-groups {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 clamp(12px, 3vw, 20px);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 4px;
   border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
   margin-bottom: 12px;
 }
@@ -157,4 +157,21 @@
 .lab-groups button[aria-pressed="true"] {
   color: var(--ink);
   border-bottom-color: currentColor;
+}
+
+
+@media (max-width: 560px) {
+  .lab-groups {
+    column-gap: 0;
+  }
+  .lab-groups button {
+    font-size: 12px;
+    min-height: 36px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 339px) {
+  .lab-groups {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
