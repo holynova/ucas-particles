@@ -26,3 +26,6 @@ await writeFile("index.html", html);
 await mkdir("dist", { recursive: true });
 const analytics = '<script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"></script>';
 await writeFile("dist/index.html", html.replace("</head>", analytics + "</head>"));
+// 404.html 必须随部署一起发布: Pages 部署里没有 404.html 时, 未知路径会
+// 返回 200 + 首页(2026-11-25 实测), 而不是 404.
+await writeFile("dist/404.html", await readFile("src/404.html", "utf8"));
